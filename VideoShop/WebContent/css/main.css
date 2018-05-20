@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.wrapper{
+	max-width: 1000 px;
+}
+
+.left-bar{
+	width: 200 px;
+	
+}

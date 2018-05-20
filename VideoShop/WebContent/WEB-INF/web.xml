@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>VideoShop</display-name>
+
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+
+	<servlet>
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>by.epam.vshop.controller.Controller</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>/Controller</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AJAXController</servlet-name>
+		<servlet-class>by.epam.vshop.controller.AJAXController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AJAXController</servlet-name>
+		<url-pattern>/ajaxController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SignIn</servlet-name>
+		<jsp-file>/jsp/user/signIn.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SignIn</servlet-name>
+		<url-pattern>/signIn</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SignUp</servlet-name>
+		<jsp-file>/jsp/user/signUp.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SignUp</servlet-name>
+		<url-pattern>/signUp</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AddFilm</servlet-name>
+		<jsp-file>/jsp/film/addFilm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddFilm</servlet-name>
+		<url-pattern>/addFilm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ShoppingCart</servlet-name>
+		<jsp-file>/jsp/user/showActiveOrder.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ShoppingCart</servlet-name>
+		<url-pattern>/shoppingCart</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EditFilm</servlet-name>
+		<jsp-file>/jsp/film/editFilm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EditFilm</servlet-name>
+		<url-pattern>/editFilm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Users</servlet-name>
+		<jsp-file>/jsp/user/users.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Users</servlet-name>
+		<url-pattern>/users</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>PayedOrderhistory</servlet-name>
+		<jsp-file>/jsp/user/payed_order_history.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PayedOrderhistory</servlet-name>
+		<url-pattern>/payedHistory</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>by.epam.vshop.controller.listener.InitializationLog4jListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>by.epam.vshop.controller.listener.InitializationListener</listener-class>
+	</listener>
+	
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>by.epam.vshop.controller.filter.EncodingFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>SessionInspectorFilter</filter-name>
+		<filter-class>by.epam.vshop.controller.filter.SessionInspectorFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>SessionInspectorFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<display-name>Log4j</display-name>
+	<context-param>
+		<param-name>log4j-config-location</param-name>
+		<param-value>WEB-INF/log4j.properties</param-value>
+	</context-param>
+
+</web-app>
