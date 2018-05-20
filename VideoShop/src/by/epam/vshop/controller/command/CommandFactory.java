@@ -77,7 +77,6 @@ public class CommandFactory {
 			LOGGER.error(e);
 			command = repository.get(CommandName.WRONG_REQUEST);
 		}
-
 		return command;
 
 	}
