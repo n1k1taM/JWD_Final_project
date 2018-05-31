@@ -24,34 +24,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
-				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >Back to films</a>
-				<br>
-				<br>
-				
-			
+				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >Back to films</a><br><br>
 				<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
 								<%@include file="../elements/left-bar-admin.jsp"%>
 				</c:if>
-				
 			</div>
 			
 			
 			<c:set var="userId" value="${user.id}"></c:set>
 			<div class="col-lg-9">
 				<%@include file="../elements/account-bar.jspf"%>
-				<!--  
-				<div class="row">
-					<ul class="nav nav-tabs">
-						<c:if test="${account_command == 'show_profile'}"></c:if>
-						<li class="nav-item"><a href="profile.html" class="nav-link">Profile</a>
-						</li>
-						<li class="nav-item"><a href="message.html" class="nav-link">Messages</a>
-						</li>
-						<li class="nav-item"><a href="edit.html"
-							class="nav-link active">Edit</a></li>
-					</ul>
-				</div>
-				-->
 				<div class="tab-pane active">
 
 					<div class="row">
@@ -81,10 +63,10 @@
 									<c:forEach var="discount" items="${discountList}">
 										<c:choose>
 											<c:when test="${discount.id == userDiscount.id}">
-												<option value="${discount.id}" selected>${discount.persеnt}</option>
+												<option value="${discount.id}" selected>${discount.persent}</option>
 											</c:when>
 											<c:otherwise>
-												<option value="${discount.id}">${discount.persеnt}</option>
+												<option value="${discount.id}">${discount.persent}</option>
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -97,12 +79,8 @@
 					<div class="row">
 						<h6 class="col-lg-3">Status:</h6>
 						<div class="col-lg-6">
-							
-
-
-
 							<form action="${pageContext.request.contextPath}/Controller" class="form-inline">
-<input name="command" type="hidden" value="change_user_status">
+								<input name="command" type="hidden" value="change_user_status">
 								<input name="userId" type="hidden" value="${user.id}">
 								<c:choose>
 									<c:when test="${user.status}">
@@ -126,33 +104,15 @@
 										</p>
 									</c:otherwise>
 								</c:choose>
-								<!-- 
-								<p>
-									<input name="user_status" type="radio" value="true"> Не
-									дзен
-								</p>
-								<p>
-									<input name="user_status" type="radio" value="false">
-									Дзен
-								</p>
-
-								
-								 -->
 								 <input type="submit" class="btn btn-primary" value="Change status" >
 							</form>
-
-
-
-
-							
+	
 						</div>
 					</div>
 				</div>
-
 			</div>
-					</div>
+		</div>
 	</div>
-
 
 	<!-- Footer -->
 	<%@include file="../elements/footer.jsp"%>

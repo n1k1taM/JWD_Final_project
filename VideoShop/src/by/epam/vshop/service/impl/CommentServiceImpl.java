@@ -8,8 +8,8 @@ import by.epam.vshop.dao.CommentDAO;
 import by.epam.vshop.dao.DAOFactory;
 import by.epam.vshop.dao.exception.DAOException;
 import by.epam.vshop.service.CommentService;
-import by.epam.vshop.service.DataValidater;
 import by.epam.vshop.service.exception.ServiceException;
+import by.epam.vshop.service.validation.DataValidater;
 
 public class CommentServiceImpl implements CommentService {
 	private final int COMMENTS_PER_PAGE = 5;

@@ -6,7 +6,7 @@ public class Discount implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id;
-	private int persеnt;
+	private int persent;
 
 	public Discount() {
 		super();
@@ -20,12 +20,15 @@ public class Discount implements Serializable {
 		this.id = id;
 	}
 
-	public int getPersеnt() {
-		return persеnt;
+	
+	
+
+	public int getPersent() {
+		return persent;
 	}
 
-	public void setPersеnt(int persеnt) {
-		this.persеnt = persеnt;
+	public void setPersent(int persent) {
+		this.persent = persent;
 	}
 
 	public static long getSerialversionuid() {
@@ -37,7 +40,7 @@ public class Discount implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + id;
-		result = prime * result + persеnt;
+		result = prime * result + persent;
 		return result;
 	}
 
@@ -52,14 +55,13 @@ public class Discount implements Serializable {
 		Discount other = (Discount) obj;
 		if (id != other.id)
 			return false;
-		if (persеnt != other.persеnt)
+		if (persent != other.persent)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Discount [id=" + id + ", persеnt=" + persеnt + "]";
-	}
-
+		return "Discount [id=" + id + ", persent=" + persent + "]";
+	}	
 }

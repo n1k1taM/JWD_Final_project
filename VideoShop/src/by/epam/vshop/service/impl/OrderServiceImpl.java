@@ -9,9 +9,9 @@ import by.epam.vshop.dao.DAOFactory;
 import by.epam.vshop.dao.OrderDAO;
 import by.epam.vshop.dao.UserDAO;
 import by.epam.vshop.dao.exception.DAOException;
-import by.epam.vshop.service.DataValidater;
 import by.epam.vshop.service.OrderService;
 import by.epam.vshop.service.exception.ServiceException;
+import by.epam.vshop.service.validation.DataValidater;
 
 public class OrderServiceImpl implements OrderService{
 
@@ -181,6 +181,27 @@ public class OrderServiceImpl implements OrderService{
 			throw new ServiceException(e);
 		}
 		return null;
+	}
+
+	@Override
+	public boolean isFilmInPayedOrder(int userId, String strFilmId) throws ServiceException {
+		if (!DataValidater.validatePositiveInteger(userId)) {
+			throw new ServiceException("Incorrext parameter 'userId'");
+		}
+		if (!DataValidater.validatePositiveInteger(strFilmId)) {
+			throw new ServiceException("Incorrext parameter 'filmId'");
+		}
+		
+		int filmId = Integer.parseInt(strFilmId);
+		
+		DAOFactory daoFactory = DAOFactory.getInstance();
+		OrderDAO orderDAO = daoFactory.getOrderDAO();
+		
+		try {
+			return orderDAO.isFilmInPayedOrder(userId, filmId);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
 	}
 	
 }

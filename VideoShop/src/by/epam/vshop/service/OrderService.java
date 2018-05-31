@@ -24,4 +24,6 @@ public interface OrderService {
 	List<Order> getPayedOrdersByUserId(String id) throws ServiceException;
 	
 	OrderStatus getOrderStatus(int userId, String strFilmId) throws ServiceException;
+
+	boolean isFilmInPayedOrder(int userId, String strFilmId) throws ServiceException;
 }

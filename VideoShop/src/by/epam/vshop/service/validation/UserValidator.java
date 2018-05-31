@@ -1,7 +1,5 @@
 package by.epam.vshop.service.validation;
 
-import by.epam.vshop.service.DataValidater;
-
 public final class UserValidator {
 
 	private UserValidator() {

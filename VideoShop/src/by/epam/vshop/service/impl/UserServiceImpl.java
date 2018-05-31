@@ -8,9 +8,9 @@ import by.epam.vshop.dao.DAOFactory;
 import by.epam.vshop.dao.OrderDAO;
 import by.epam.vshop.dao.UserDAO;
 import by.epam.vshop.dao.exception.DAOException;
-import by.epam.vshop.service.DataValidater;
 import by.epam.vshop.service.UserService;
 import by.epam.vshop.service.exception.ServiceException;
+import by.epam.vshop.service.validation.DataValidater;
 import by.epam.vshop.service.validation.UserValidator;
 
 public class UserServiceImpl implements UserService {

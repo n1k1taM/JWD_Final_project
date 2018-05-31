@@ -1,9 +1,7 @@
-package by.epam.vshop.service;
+package by.epam.vshop.service.validation;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import by.epam.vshop.service.validation.RegularExpression;
 
 public final class DataValidater {
 

@@ -10,9 +10,9 @@ import by.epam.vshop.bean.Genre;
 import by.epam.vshop.dao.DAOFactory;
 import by.epam.vshop.dao.FilmDAO;
 import by.epam.vshop.dao.exception.DAOException;
-import by.epam.vshop.service.DataValidater;
 import by.epam.vshop.service.FilmService;
 import by.epam.vshop.service.exception.ServiceException;
+import by.epam.vshop.service.validation.DataValidater;
 import by.epam.vshop.service.validation.FilmValidator;
 
 public class FilmServiceImpl implements FilmService {

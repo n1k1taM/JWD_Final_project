@@ -7,10 +7,12 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
 import by.epam.vshop.bean.Order;
+import by.epam.vshop.bean.UserRole;
 import by.epam.vshop.controller.JSPPageName;
 import by.epam.vshop.controller.ParameterName;
 import by.epam.vshop.controller.command.Command;
@@ -24,7 +26,17 @@ public class GetUserPaymentHistory implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		String userId = request.getParameter(ParameterName.USER_ID);
+		
+		HttpSession session = request.getSession();
+		String userRole = (String)session.getAttribute(ParameterName.ROLE);
+		
+		String userId = null;
+		if (userRole.equalsIgnoreCase(UserRole.ADMIN.name())) {
+			userId = request.getParameter(ParameterName.USER_ID);
+		}else {
+			userId = (String)session.getAttribute(ParameterName.USER_ID);
+		}
+		
 
 		ServiceFactory factory = ServiceFactory.getInstance();
 		OrderService orderService = factory.getOrderService();

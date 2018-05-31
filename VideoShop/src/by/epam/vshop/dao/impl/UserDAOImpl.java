@@ -266,7 +266,7 @@ public class UserDAOImpl implements UserDAO {
 			
 			Discount discount = new Discount();
 			if (resultSet.next()) {
-				discount.setPersеnt(resultSet.getInt(ColumnLabel.DISCOUNT_PERSENT));
+				discount.setPersent(resultSet.getInt(ColumnLabel.DISCOUNT_PERSENT));
 				discount.setId(resultSet.getInt(ColumnLabel.DISCOUNT_ID));;
 			}
 			return discount;
@@ -296,7 +296,7 @@ public class UserDAOImpl implements UserDAO {
 			List<Discount> discountList = new ArrayList<>(); 
 			while (resultSet.next()) {
 				Discount discount = new Discount();
-				discount.setPersеnt(resultSet.getInt(ColumnLabel.DISCOUNT_PERSENT));
+				discount.setPersent(resultSet.getInt(ColumnLabel.DISCOUNT_PERSENT));
 				discount.setId(resultSet.getInt(ColumnLabel.DISCOUNT_ID));
 				discountList.add(discount);
 			}

@@ -45,4 +45,5 @@ public final class ParameterName {
 	public static final String ORDER_LIST = "order_list";
 	
 	public static final String ACCOUNT_COMMAND = "account_command";
+	public static final String LOCAL = "local";
 }

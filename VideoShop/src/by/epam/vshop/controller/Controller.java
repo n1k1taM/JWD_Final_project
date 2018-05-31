@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import by.epam.vshop.controller.command.Command;
 import by.epam.vshop.controller.command.CommandFactory;
 
 public class Controller extends HttpServlet {
-
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = Logger.getLogger(Controller.class);
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,7 +36,7 @@ public class Controller extends HttpServlet {
 		try {
 			command.execute(request, response);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Operation error", e);
 		}
 	}
 

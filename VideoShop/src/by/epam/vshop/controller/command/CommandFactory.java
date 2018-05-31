@@ -17,6 +17,7 @@ import by.epam.vshop.controller.command.film.ShowFilm;
 import by.epam.vshop.controller.command.film.ShowFilmsByGenre;
 import by.epam.vshop.controller.command.init.DestroySource;
 import by.epam.vshop.controller.command.init.InitializationSource;
+import by.epam.vshop.controller.command.local.Localization;
 import by.epam.vshop.controller.command.user.AddComment;
 import by.epam.vshop.controller.command.user.AddFilmToActiveOrder;
 import by.epam.vshop.controller.command.user.AddRating;
@@ -67,6 +68,7 @@ public class CommandFactory {
 		repository.put(CommandName.CHANGE_USER_STATUS, new ChangeUserStatus());
 		repository.put(CommandName.GET_USER_PAYMENT_HISTORY, new GetUserPaymentHistory());
 		repository.put(CommandName.WATCH_FILM, new WatchFilm());
+		repository.put(CommandName.LOCALIZATION, new Localization());
 	}
 
 	public Command getCommand(String commandName) {
