@@ -28,7 +28,7 @@ public class AddDiscountToClient implements Command{
 			userService.addDiscountToClient(strClientId, strDiscountId);
 			response.sendRedirect(request.getContextPath() + "/Controller?command=show_user_account_for_admin&userId=" + strClientId);
 		} catch (ServiceException e) {
-			logger.error(e);
+			logger.error("Error executing command", e);
 			response.sendRedirect(request.getContextPath() + "/Controller?command=show_active_order");
 		}
 	}

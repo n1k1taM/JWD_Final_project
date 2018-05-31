@@ -40,8 +40,8 @@ public class EditFilm implements Command {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
-			response.sendRedirect(request.getContextPath() + "/editFilm?errorMassage=editFilmError");
 			logger.error("Edit film error", e);
+			response.sendRedirect(request.getContextPath() + "/editFilm?errorMassage=editFilmError");
 		}
 		
 	}

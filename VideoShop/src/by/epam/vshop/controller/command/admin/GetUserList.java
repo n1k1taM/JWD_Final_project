@@ -3,6 +3,7 @@ package by.epam.vshop.controller.command.admin;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,9 +30,11 @@ public class GetUserList implements Command {
 		try {
 			List<User> userList = userService.getUserList(pageNumber, "10");
 			request.setAttribute(ParameterName.USER_LIST, userList);
-			request.getRequestDispatcher(JSPPageName.USER_LIST).forward(request, response);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher(JSPPageName.USER_LIST);
+			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
-			logger.error("Error of executing command", e);
+			logger.error("Error executing command", e);
 		}
 	}
 

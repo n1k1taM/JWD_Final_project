@@ -57,7 +57,7 @@ public class ShowActiveOrder implements Command{
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
 			logger.error(e);
-			response.sendRedirect(request.getContentType() +  JSPPageName.INDEX_PAGE);
+			response.sendRedirect(request.getContextPath() +  JSPPageName.INDEX_PAGE);
 		}
 		
 		

@@ -34,7 +34,7 @@ public class GetUserPaymentHistory implements Command {
 		if (userRole.equalsIgnoreCase(UserRole.ADMIN.name())) {
 			userId = request.getParameter(ParameterName.USER_ID);
 		}else {
-			userId = (String)session.getAttribute(ParameterName.USER_ID);
+			userId = (String.valueOf(session.getAttribute(ParameterName.USER_ID)));
 		}
 		
 

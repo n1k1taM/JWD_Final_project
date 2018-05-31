@@ -1,4 +1,4 @@
-package by.epam.vshop.controller.command.film;
+package by.epam.vshop.controller.command.admin;
 
 import java.io.IOException;
 
@@ -39,7 +39,7 @@ public class AddFilm implements Command {
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
 			response.sendRedirect(request.getContextPath() + "/addFilm?errorMassage=addFilmError");
-			logger.error("Add film error", e);
+			logger.error("Error executing command", e);
 		}
 	}
 

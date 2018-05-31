@@ -45,7 +45,7 @@ public class ShowUserAccountForAdmin implements Command{
 			RequestDispatcher dispatcher = request.getRequestDispatcher(JSPPageName.ACCOUTN_FOR_ADMIN);
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
-			logger.error(e);
+			logger.error("Error executing command", e);
 		}
 		
 	}

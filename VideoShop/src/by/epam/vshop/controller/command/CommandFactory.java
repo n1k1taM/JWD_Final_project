@@ -6,10 +6,10 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import by.epam.vshop.controller.command.admin.AddDiscountToClient;
+import by.epam.vshop.controller.command.admin.AddFilm;
 import by.epam.vshop.controller.command.admin.ChangeUserStatus;
 import by.epam.vshop.controller.command.admin.GetUserList;
 import by.epam.vshop.controller.command.admin.ShowUserAccountForAdmin;
-import by.epam.vshop.controller.command.film.AddFilm;
 import by.epam.vshop.controller.command.film.EditFilm;
 import by.epam.vshop.controller.command.film.GetGenreList;
 import by.epam.vshop.controller.command.film.LoadFilmOnEditForm;
