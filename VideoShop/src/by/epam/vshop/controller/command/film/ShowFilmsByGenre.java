@@ -28,9 +28,10 @@ public class ShowFilmsByGenre implements Command {
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		FilmService filmService = serviceFactory.getFilmService();
 		try {
-			List<Film> filmList = filmService.getFilmListByGenreId(strGenreId, pageNumber);
-			List<Genre> genreList = filmService.getAllGenres();
 			int maxPageNumber = filmService.getMaxPageNumberbyGenreId(strGenreId);
+			List<Film> filmList = filmService.getFilmListByGenreId(strGenreId, pageNumber, ((Integer)maxPageNumber).toString());
+			List<Genre> genreList = filmService.getAllGenres();
+			
 
 			request.setAttribute("filmList", filmList);
 			request.setAttribute("genreList", genreList);
@@ -43,8 +44,8 @@ public class ShowFilmsByGenre implements Command {
 			dispatcher.forward(request, response);
 
 		} catch (ServiceException e) {
-			logger.error(e);
-			response.sendRedirect(JSPPageName.MAIN);
+			logger.error("Error executing command", e);
+			response.sendRedirect(request.getContextPath() + JSPPageName.INDEX_PAGE);
 		}
 
 	}

@@ -12,6 +12,7 @@
 
 <!-- Custom styles for this template -->
 <link href="css/shop-item.css" rel="stylesheet">
+<%@include file="../elements/localization.jsp" %>
 
 </head>
 
@@ -23,13 +24,13 @@
 		<div class="row">
 			<div class="col-lg-3">
 			
-				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >Back to films</a>
+				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >${button_back_to_main}</a>
 				<br>
 				<br>
 				
 			
 				<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
-								<%@include file="../elements/left-bar-admin.jsp"%>
+						<%@include file="../elements/left-bar-admin.jsp"%>
 				</c:if>
 			</div>
 
@@ -64,46 +65,6 @@
 	</div>
 	</div>
 	
-	----
-	
-	<!-------
-	<div class="container">
-		<table class="table table-hover table-dark">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Creation date</th>
-					<th scope="col">Total price</th>
-					<th scope="col">Status</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${requestScope.order_list}" var="list">
-					<tr>
-						<th scope="row">${list.id}</th>
-						<td>${list.date}</td>
-						<td>${list.cost}</td>
-						<td>${list.status}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-	----->
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
 	<!-- Footer -->
 	<%@include file="../elements/footer.jsp"%>
 

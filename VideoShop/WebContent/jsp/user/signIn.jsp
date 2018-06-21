@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/signup_page.css">
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
+<%@include file="../elements/localization.jsp" %>
 </head>
 <body>
 	<%@include file="../elements/nav-bar.jsp" %>
@@ -31,14 +31,14 @@
 			<p class="password-help">Please enter your password.</p>
 			
 			<input type="submit" class="submit" value="Sign in">
-			<div class="login-register"><h5><a href="signUp">Registration</a></h5></div>
+			<div class="login-register"><h5><a href="${pageContext.request.contextPath}/Controller?command=show_sign_up_form">Registration</a></h5></div>
 		</form>
 	</div>
 		<br><br>
 		<br><br>
 		<br><br>
 
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="js/jquery.min.js"></script>
 	<script src="js/signup_page.js"></script>
 
 </body>

@@ -30,7 +30,7 @@ public class LoadFilmOnEditForm implements Command{
 			request.setAttribute(ParameterName.FILM, film);
 			request.getRequestDispatcher(JSPPageName.EDIT_FILM).forward(request, response);
 		} catch (ServiceException e) {
-			logger.error("load film command is feiled", e);
+			logger.error("Error executing command", e);
 			response.sendRedirect(request.getContextPath() + JSPPageName.MAIN);
 		}
 		

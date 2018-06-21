@@ -46,6 +46,7 @@ public class ShowUserAccountForAdmin implements Command{
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
 			logger.error("Error executing command", e);
+			response.sendRedirect(request.getContextPath() + JSPPageName.INDEX_PAGE);
 		}
 		
 	}

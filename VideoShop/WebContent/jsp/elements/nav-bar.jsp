@@ -37,19 +37,22 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<c:if test="${(not empty sessionScope.role) and (sessionScope.role == 'client')}">
-						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=show_active_order">Cart</a></li>
-						<li class="nav-item" ><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=show_client_film_list&pageNumber=1">My films</a></li>
-						<li class="nav-item" ><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=show_user_account">Account</a></li>
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=show_active_order">${button_cart}</a></li>
+						<li class="nav-item" ><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=show_client_film_list&pageNumber=1">${button_my_films}</a></li>
+						<li class="nav-item" ><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=show_user_account">${button_account}</a></li>
 					</c:if>
 					<li class="nav-item"><c:choose>
 							<c:when test="${sessionScope.login != null}">
-							<a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=logout">Logout</a>
+							<a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=logout">${button_logout}</a>
 							</c:when>
 							<c:otherwise>
-								<a class="nav-link" href="${pageContext.request.contextPath}/signIn"> Sign in</a>
+								
+								<a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=show_sign_in_form">${button_sign_in}</a>
 							</c:otherwise>
 						</c:choose>
-					</li>					
+					</li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=localization&local=en">${en_button}</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Controller?command=localization&local=ru">${ru_button}</a></li>										
 				</ul>
 			</div>
 		</div>

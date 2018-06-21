@@ -51,7 +51,7 @@
 				});
 	}
 </script>
-
+	<%@include file="../elements/localization.jsp" %>	
 </head>
 
 <body>
@@ -60,20 +60,19 @@
 	<div class="container film-form">
 		<div class="row">
 			<div class="col-md-3">
-				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >Back to films</a>
+				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >${button_back_to_main}</a>
 				<br>
 				<br>
 				<div class="list-group">
-					<jsp:useBean id="Genre" class="by.epam.vshop.bean.Genre"></jsp:useBean>
-					<h3 style="text-align: center">Admin Menu</h3>
+					<h3 style="text-align: center">${admin_menu}</h3>
 
 					<div class="btn-group-vertical">
 						<a
 							href="${pageContext.request.contextPath}/Controller?command=user_list&pageNumber=1"
-							class="btn border list-group-item">User list</a><br> 
+							class="btn border list-group-item">${button_user_list}</a><br> 
 						<a
-							href="${pageContext.request.contextPath}/addFilm"
-							class="btn border list-group-item active">Add Film</a><br>
+							href="${pageContext.request.contextPath}/Controller?command=show_add_film_form"
+							class="btn border list-group-item active">${button_add_film}</a><br>
 					</div>
 				</div>
 			</div>

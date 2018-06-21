@@ -13,6 +13,7 @@ import by.epam.vshop.controller.command.admin.ShowUserAccountForAdmin;
 import by.epam.vshop.controller.command.film.EditFilm;
 import by.epam.vshop.controller.command.film.GetGenreList;
 import by.epam.vshop.controller.command.film.LoadFilmOnEditForm;
+import by.epam.vshop.controller.command.film.ShowAddFilmForm;
 import by.epam.vshop.controller.command.film.ShowFilm;
 import by.epam.vshop.controller.command.film.ShowFilmsByGenre;
 import by.epam.vshop.controller.command.init.DestroySource;
@@ -32,6 +33,8 @@ import by.epam.vshop.controller.command.user.SignUp;
 import by.epam.vshop.controller.command.user.WatchFilm;
 import by.epam.vshop.controller.command.user.ShowMainPage;
 import by.epam.vshop.controller.command.user.ShowPaymentPage;
+import by.epam.vshop.controller.command.user.ShowSignInForm;
+import by.epam.vshop.controller.command.user.ShowSignUpForm;
 import by.epam.vshop.controller.command.user.ShowUserAccount;
 
 public class CommandFactory {
@@ -69,6 +72,10 @@ public class CommandFactory {
 		repository.put(CommandName.GET_USER_PAYMENT_HISTORY, new GetUserPaymentHistory());
 		repository.put(CommandName.WATCH_FILM, new WatchFilm());
 		repository.put(CommandName.LOCALIZATION, new Localization());
+		repository.put(CommandName.SHOW_SIGN_IN_FORM, new ShowSignInForm());
+		repository.put(CommandName.SHOW_SIGN_UP_FORM, new ShowSignUpForm());
+		repository.put(CommandName.SHOW_ADD_FILM_FORM, new ShowAddFilmForm());
+		
 	}
 
 	public Command getCommand(String commandName) {

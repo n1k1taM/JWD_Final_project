@@ -4,7 +4,7 @@
 
 <div class="list-group">
 	<jsp:useBean id="Genre" class="by.epam.vshop.bean.Genre"></jsp:useBean>
-	<h3 style="text-align: center" >Жанры</h3>
+	<h3 style="text-align: center" >${label_genres}</h3>
 	
 	<div class="btn-group-vertical">
 

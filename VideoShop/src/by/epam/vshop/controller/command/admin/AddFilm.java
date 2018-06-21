@@ -38,8 +38,8 @@ public class AddFilm implements Command {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
-			response.sendRedirect(request.getContextPath() + "/addFilm?errorMassage=addFilmError");
 			logger.error("Error executing command", e);
+			response.sendRedirect(request.getContextPath() + "/Controller?command=show_add_film_form&errorMassage=addFilmError");
 		}
 	}
 

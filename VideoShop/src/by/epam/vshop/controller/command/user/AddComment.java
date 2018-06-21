@@ -31,7 +31,7 @@ public class AddComment implements Command {
 		try {
 			commentService.addComment(userId, strFilmId, message);
 		} catch (ServiceException e) {
-			logger.error(e);
+			logger.error("Error executing command", e);
 
 		}
 		response.sendRedirect(request.getContextPath() + "/Controller?command=show_film&filmId=" + strFilmId

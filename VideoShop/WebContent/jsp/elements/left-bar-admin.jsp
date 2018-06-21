@@ -4,12 +4,11 @@
 <html>
 
 <div class="list-group">
-	<jsp:useBean id="Genre" class="by.epam.vshop.bean.Genre"></jsp:useBean>
-	<h3 style="text-align: center" >Admin Menu</h3>
+	<h3 style="text-align: center" >${admin_menu}</h3>
 	
 	<div class="btn-group-vertical">
-		<a href="${pageContext.request.contextPath}/Controller?command=user_list&pageNumber=1" class="btn border list-group-item">User list</a><br>
-		<a href="${pageContext.request.contextPath}/addFilm" class="btn border list-group-item">Add Film</a><br>
+		<a href="${pageContext.request.contextPath}/Controller?command=user_list&pageNumber=1" class="btn border list-group-item">${button_user_list}</a><br>
+		<a href="${pageContext.request.contextPath}/Controller?command=show_add_film_form" class="btn border list-group-item">${button_add_film}</a><br>
 	</div>	
 </div>
 

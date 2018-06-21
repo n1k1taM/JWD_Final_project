@@ -34,16 +34,16 @@ public class WatchFilm implements Command{
 		
 		try {
 			if (orderService.isFilmInPayedOrder(userId, strFilmId)) {
+				Film film = filmService.getFilm(strFilmId);
+				request.setAttribute(ParameterName.FILM, film);
 				
+				RequestDispatcher dispatcher = request.getRequestDispatcher(JSPPageName.WATCH_FILM);
+				dispatcher.forward(request, response);
 			}
-			Film film = filmService.getFilm(strFilmId);
-			request.setAttribute(ParameterName.FILM, film);
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher(JSPPageName.WATCH_FILM);
-			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
-			logger.error(e);
-			response.sendRedirect(JSPPageName.INDEX_PAGE);
+			logger.error("Error executing command", e);
+			response.sendRedirect(request.getContextPath() + JSPPageName.INDEX_PAGE);
 		}
 		
 		

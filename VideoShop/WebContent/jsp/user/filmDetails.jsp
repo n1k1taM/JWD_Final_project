@@ -11,6 +11,7 @@
 <!-- Custom styles for this template -->
 <link href="css/shop-item.css" rel="stylesheet">
 <link href="css/pagination.css" rel="stylesheet">
+<%@include file="../elements/localization.jsp" %>
 
 <style>
 .videoWrapper {
@@ -36,7 +37,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
-				<jsp:include page="../elements/left-bar.jsp"></jsp:include>
+				<%@include file="../elements/left-bar.jsp" %>
+				<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
+					<%@include file="../elements/left-bar-admin.jsp" %>
+				</c:if>
 			</div>
 
 			 <div class="col-lg-9" >
@@ -51,8 +55,8 @@
 							</div>
 							<h4 class="card-title">${film.title}</h4>
 							<h4>${film.price}$</h4>
-							<p>Год выхода: ${film.releaseYear}</p>
-							<p>Жанр:
+							<p>${label_year}: ${film.releaseYear}</p>
+							<p>${label_genre}:
 								<c:forEach var="genre" items="${film.genreList}">
 									<a href="${pageContext.request.contextPath}/Controller?command=show_films_by_genre&genreId=${genre.id}&pageNumber=1&filmsPerPage=2">${genre.name}</a>
 								</c:forEach>
@@ -60,20 +64,20 @@
 							<p>${film.longDescription}</p>
 							<c:choose>
 								<c:when test="${(empty filmOrderStatus)and(sessionScope.role != 'admin')}">
-									<a href="${pageContext.request.contextPath}/Controller?command=add_film_to_active_order&filmId=${film.id}" class="btn btn-success" role="button">Добавить в карзину</a>
+									<a href="${pageContext.request.contextPath}/Controller?command=add_film_to_active_order&filmId=${film.id}" class="btn btn-success" role="button">${button_add_to_cart}</a>
 								</c:when>
 								<c:when test="${(filmOrderStatus == 'ACTIVE')}">
-									<a href="${pageContext.request.contextPath}/Controller?command=show_active_order" class="btn btn-success" role="button">Перейти в карзину</a>
+									<a href="${pageContext.request.contextPath}/Controller?command=show_active_order" class="btn btn-success" role="button">${button_go_to_cart}</a>
 								</c:when>
 								
 								<c:when test="${(filmOrderStatus == 'PAYED')}">
-									<a href="${pageContext.request.contextPath}/Controller?command=watch_film&filmId=${film.id}" class="btn btn-success" role="button">Смотреть фильм</a>
+									<a href="${pageContext.request.contextPath}/Controller?command=watch_film&filmId=${film.id}" class="btn btn-success" role="button">${button_watch_film}</a>
 								</c:when>
 							</c:choose>
 							
 							
 							<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
-								<a href="${pageContext.request.contextPath}/Controller?command=load_film_on_edit_page&filmId=${film.id}" class="btn btn-info" role="button">Редактировать фильм</a>
+								<a href="${pageContext.request.contextPath}/Controller?command=load_film_on_edit_page&filmId=${film.id}" class="btn btn-info" role="button">${button_edit_film}</a>
 							</c:if>
 						</div>
 

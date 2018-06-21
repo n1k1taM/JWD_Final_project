@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC>
 
@@ -10,18 +10,64 @@
 	<fmt:message bundle="${loc}" key="local.button.en" var="en_button" />	
 
 <!-- GENERAL BUTTONS -->
-	<fmt:message bundle="${loc}" key="local.button.more" var="more_button"/>
-	<fmt:message bundle="${loc}" key="local.button.edit" var="edit_button"/>
-	<fmt:message bundle="${loc}" key="local.button.remove" var="remove_button"/>
-	<fmt:message bundle="${loc}" key="local.button.apply" var="apply_button"/>
-	<fmt:message bundle="${loc}" key="local.button.cancel" var="cancel_button"/>
-	<fmt:message bundle="${loc}" key="local.button.reestablish" var="reestablish_button"/>
-	<fmt:message bundle="${loc}" key="local.button.add" var="add_button"/>
-	<fmt:message bundle="${loc}" key="local.button.security" var="security_button"/>
-	<fmt:message bundle="${loc}" key="local.button.exit" var="exit_button"/>
-	<fmt:message bundle="${loc}" key="local.button.makeOrder" var="make_order_button"/>
+	<fmt:message bundle="${loc}" key="local.button.more" var="button_more"/>
+	<fmt:message bundle="${loc}" key="local.button.singin" var="button_sign_in"/>
+	<fmt:message bundle="${loc}" key="local.button.signup" var="button_sign_up"/>
+	<fmt:message bundle="${loc}" key="local.button.logout" var="button_logout"/>
+	<fmt:message bundle="${loc}" key="local.button.backToMain" var="button_back_to_main"/>
+	<fmt:message bundle="${loc}" key="local.button.addToCart" var="button_add_to_cart"/>
+	<fmt:message bundle="${loc}" key="local.button.addComment" var="button_add_comment"/>
+	<fmt:message bundle="${loc}" key="local.button.addRating" var="button_add_rating"/>
+	<fmt:message bundle="${loc}" key="local.button.cart" var="button_cart"/>
+	<fmt:message bundle="${loc}" key="local.button.goToCart" var="button_go_to_cart"/>
+	<fmt:message bundle="${loc}" key="local.button.watchFilm" var="button_watch_film"/>
+	<fmt:message bundle="${loc}" key="local.button.addFilm" var="button_add_film"/>
+	<fmt:message bundle="${loc}" key="local.button.editFilm" var="button_edit_film"/>
+	<fmt:message bundle="${loc}" key="local.button.myFilms" var="button_my_films"/>
+	<fmt:message bundle="${loc}" key="local.button.account" var="button_account"/>
+	<fmt:message bundle="${loc}" key="local.button.userList" var="button_user_list"/>
+	<fmt:message bundle="${loc}" key="local.button.changeDiscount" var="button_change_discount"/>
+	<fmt:message bundle="${loc}" key="local.button.changeStatus" var="button_change_status"/>
+	<fmt:message bundle="${loc}" key="local.button.makeOrder" var="button_make_order"/>
+	<fmt:message bundle="${loc}" key="local.button.payOrder" var="button_pay_order"/>
+	
+	
+	
 
 <!-- LABELS -->
+	<fmt:message bundle="${loc}" key="local.lable.genre" var="label_genre"/>
+	<fmt:message bundle="${loc}" key="local.lable.genres" var="label_genres"/>
+	<fmt:message bundle="${loc}" key="local.lable.adminMenu" var="admin_menu"/>
+	<fmt:message bundle="${loc}" key="local.lable.year" var="label_year"/>
+	<fmt:message bundle="${loc}" key="local.label.login" var="label_login"/>
+	<fmt:message bundle="${loc}" key="local.label.password" var="label_password"/>
+	<fmt:message bundle="${loc}" key="local.label.confirmPassword" var="label_confirm_password"/>
+	<fmt:message bundle="${loc}" key="local.label.film" var="label_film"/>
+	<fmt:message bundle="${loc}" key="local.label.price" var="label_price"/>
+	<fmt:message bundle="${loc}" key="local.label.cost" var="label_cost"/>
+	<fmt:message bundle="${loc}" key="local.label.discount" var="label_discount"/>
+	<fmt:message bundle="${loc}" key="local.label.costAfterDiscount" var="label_cost_after_discount"/>
+	<fmt:message bundle="${loc}" key="local.label.firstName" var="label_first_name"/>
+	<fmt:message bundle="${loc}" key="local.label.lastName" var="label_last_name"/>
+	<fmt:message bundle="${loc}" key="local.label.email" var="label_email"/>
+	<fmt:message bundle="${loc}" key="local.label.date" var="label_date"/>
+	<fmt:message bundle="${loc}" key="local.label.totalCost" var="label_total_cost"/>
+	<fmt:message bundle="${loc}" key="local.label.status" var="label_status"/>
+	<fmt:message bundle="${loc}" key="local.label.fullName" var="label_fullName"/>
+	<fmt:message bundle="${loc}" key="local.label.title" var="label_title"/>
+	<fmt:message bundle="${loc}" key="local.label.filmURL" var="label_film_URL"/>
+	<fmt:message bundle="${loc}" key="local.label.trailerURL" var="label_trailer_URL"/>
+	<fmt:message bundle="${loc}" key="local.label.shortDescription" var="label_short_description"/>
+	<fmt:message bundle="${loc}" key="local.label.longDescription" var="label_long_description"/>
+	<fmt:message bundle="${loc}" key="local.label.active" var="label_active"/>
+	<fmt:message bundle="${loc}" key="local.label.blocked" var="label_blocked"/>
+	<fmt:message bundle="${loc}" key="local.label.profile" var="label_profile"/>
+	<fmt:message bundle="${loc}" key="local.label.orders" var="label_orders"/>
+	<fmt:message bundle="${loc}" key="local.label.enter" var="label_enter"/>
+	
+	
+	
+	
 	<fmt:message bundle="${loc}" key="local.label.title" var="title_label"/>
 	<fmt:message bundle="${loc}" key="local.label.price" var="price_label"/>
 	<fmt:message bundle="${loc}" key="local.label.description" var="description_label"/>
@@ -31,9 +77,12 @@
 	<fmt:message bundle="${loc}" key="local.label.login" var="login_label"/>
 	<fmt:message bundle="${loc}" key="local.label.password" var="password_label"/>
 	<fmt:message bundle="${loc}" key="local.label.confirmPassword" var="confirm_password_label"/>
+	
+	
 	<fmt:message bundle="${loc}" key="local.label.name" var="name_label"/>
 	<fmt:message bundle="${loc}" key="local.label.surname" var="surname_label"/>
-	<fmt:message bundle="${loc}" key="local.label.email" var="email_label"/>
+	
+	
 	<fmt:message bundle="${loc}" key="local.label.phone" var="phone_label"/>
 	<fmt:message bundle="${loc}" key="local.label.birthDate" var="birth_date_label"/>
 	<fmt:message bundle="${loc}" key="local.label.dateOfPublication" var="date_of_publication_label"/>
@@ -98,7 +147,7 @@
 	
 <!-- EDIT -->
 	<fmt:message bundle="${loc}" key="local.label.edit.news" var="news_edit_label"/>
-	<fmt:message bundle="${loc}" key="local.label.edit.profile" var="profile_edit_label"/>
+	
 	<fmt:message bundle="${loc}" key="local.label.edit.tariff" var="tariff_edit_label"/>
 
 <!-- ADD -->

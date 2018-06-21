@@ -30,5 +30,6 @@ public interface FilmDAO {
 	List<Film> getClientFilmList(int clientId, int begin, int offset) throws DAOException;
 	int getClientFilmCounter(int clientId) throws DAOException;
 	List<Film> getFilmsByOrderId(int orderId) throws DAOException;
+	boolean isGenreExest(int id) throws DAOException;
 	
 }

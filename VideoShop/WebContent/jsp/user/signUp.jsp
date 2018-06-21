@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/signup_page.css">
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<%@include file="../elements/localization.jsp" %>
 </head>
 
 <body>
@@ -14,9 +15,7 @@
 	
 	<div class="wrapper">
 		<h1 style="color: white;">Register For An Account</h1>
-		<p>To sign-up for a free basic account please provide us with some
-			basic information using the contact form below. Please use valid
-			credentials.</p>
+		
 
 		<div style="color: red">
 			<c:if test="${param.errorMassage == 'singupError'}">Registration was failed</c:if>
@@ -52,7 +51,7 @@
 	</div>
 
 
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="js/jquery.min.js"></script>
 	<script src="js/signup_page.js"></script>
 </body>
 </html>

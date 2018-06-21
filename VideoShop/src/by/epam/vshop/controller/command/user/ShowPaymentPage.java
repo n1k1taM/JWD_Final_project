@@ -48,8 +48,8 @@ public class ShowPaymentPage implements Command{
 			RequestDispatcher dispatcher = request.getRequestDispatcher(JSPPageName.PAYMENT);
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
-			logger.error(e);
-			response.sendRedirect(JSPPageName.INDEX_PAGE);
+			logger.error("Error executing command", e);
+			response.sendRedirect(request.getContextPath() + JSPPageName.INDEX_PAGE);
 		}
 		
 	}

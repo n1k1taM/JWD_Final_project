@@ -12,6 +12,7 @@
 <!-- Custom styles for this template -->
 <link href="css/shop-item.css" rel="stylesheet">
 <link href="css/pagination.css" rel="stylesheet">
+<%@include file="../elements/localization.jsp" %>
 
 <style>
 </style>
@@ -24,46 +25,33 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
-				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >Back to films</a>
+				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >${button_back_to_main}</a>
 				<br>
 				<br>
 			</div>
 
 			<div class="col-lg-9">
 				<%@include file="../elements/account-bar.jspf"%>
-				<!--  
-				<div class="row">
-					<ul class="nav nav-tabs">
-						<c:if test="${account_command == 'show_profile'}"></c:if>
-						<li class="nav-item"><a href="profile.html" class="nav-link">Profile</a>
-						</li>
-						<li class="nav-item"><a href="message.html" class="nav-link">Messages</a>
-						</li>
-						<li class="nav-item"><a href="edit.html"
-							class="nav-link active">Edit</a></li>
-					</ul>
-				</div>
-				-->
 				<div class="tab-pane active">
 
 					<div class="row">
-						<h6 class="col-lg-3">Login:</h6>
+						<h6 class="col-lg-3">${label_login}:</h6>
 						<span class="col-lg-3">${user.login}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">Email:</h6>
+						<h6 class="col-lg-3">${label_password}:</h6>
 						<span class="col-lg-3">${user.email}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">First name:</h6>
+						<h6 class="col-lg-3">${label_first_name}:</h6>
 						<span class="col-lg-3">${user.login}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">Last name:</h6>
+						<h6 class="col-lg-3">${label_last_name}:</h6>
 						<span class="col-lg-3">${user.lastName}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">Discount:</h6>
+						<h6 class="col-lg-3">${label_discount}:</h6>
 						<span class="col-lg-3">${user.discount} %</span>
 					</div>
 

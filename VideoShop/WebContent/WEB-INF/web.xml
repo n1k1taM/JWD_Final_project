@@ -8,8 +8,8 @@
 	<welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>
 	</welcome-file-list>
-	
-	
+
+
 
 	<servlet>
 		<servlet-name>Controller</servlet-name>
@@ -72,26 +72,6 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>EditFilm</servlet-name>
-		<jsp-file>/jsp/film/editFilm.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>EditFilm</servlet-name>
-		<url-pattern>/editFilm</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Users</servlet-name>
-		<jsp-file>/jsp/user/users.jsp</jsp-file>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Users</servlet-name>
-		<url-pattern>/users</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
 		<servlet-name>PayedOrderhistory</servlet-name>
 		<jsp-file>/jsp/user/payed_order_history.jsp</jsp-file>
 	</servlet>
@@ -108,7 +88,7 @@
 	<listener>
 		<listener-class>by.epam.vshop.controller.listener.InitializationListener</listener-class>
 	</listener>
-	
+
 	<filter>
 		<filter-name>EncodingFilter</filter-name>
 		<filter-class>by.epam.vshop.controller.filter.EncodingFilter</filter-class>
@@ -118,7 +98,7 @@
 		<filter-name>EncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
 	<filter>
 		<filter-name>SessionInspectorFilter</filter-name>
 		<filter-class>by.epam.vshop.controller.filter.SessionInspectorFilter</filter-class>
@@ -128,11 +108,25 @@
 		<filter-name>SessionInspectorFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<filter>
+		<filter-name>SecurityFilter</filter-name>
+		<filter-class>by.epam.vshop.controller.filter.SecurityFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<display-name>Log4j</display-name>
 	<context-param>
 		<param-name>log4j-config-location</param-name>
 		<param-value>WEB-INF/log4j.properties</param-value>
 	</context-param>
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/jsp/errorPage.jsp</location>
+	</error-page>
 
 </web-app>

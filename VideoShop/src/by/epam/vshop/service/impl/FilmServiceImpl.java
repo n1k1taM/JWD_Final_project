@@ -36,18 +36,22 @@ public class FilmServiceImpl implements FilmService {
 			}
 			return film;
 		} catch (DAOException e) {
-			throw new ServiceException("Can't show film detale by id", e);
+			throw new ServiceException("Can't show film detales by id", e);
 		}
 	}
 
 	@Override
-	public List<Film> getFilmListByGenreId(String strId, String strPageNumber) throws ServiceException {
+	public List<Film> getFilmListByGenreId(String strId, String strPageNumber, String strMaxPageNumber) throws ServiceException {
 
-		if (!DataValidater.validatePositiveIntegers(strId, strPageNumber)) {
+		if (!DataValidater.validatePositiveIntegers(strId, strPageNumber, strMaxPageNumber)) {
 			throw new ServiceException("Incorrect request`s parameters");
 		}
 		int id = Integer.parseInt(strId);
 		int pageNumber = Integer.parseInt(strPageNumber);
+		int maxPageNumber = Integer.parseInt(strMaxPageNumber);
+		if (pageNumber > maxPageNumber) {
+			throw new ServiceException("Incorrect page number: pageNumber = "+ pageNumber + "; maxPageNumber = " + maxPageNumber);
+		}
 		int filmsPerPage = DEFAULT_FILMS_PER_PAGE;
 		if (pageNumber == 0) {
 			filmsPerPage = DEFAULT_PAGE_NUMBER;
@@ -59,6 +63,9 @@ public class FilmServiceImpl implements FilmService {
 
 		int numberFirstFilmOnPage = (pageNumber - 1) * filmsPerPage;
 		try {
+			if(!filmDAO.isGenreExest(id)){
+				throw new ServiceException("Genre isn`t exest: genre id = " + id);
+			}
 			filmsList = filmDAO.getFilmListByGenreId(id, numberFirstFilmOnPage, filmsPerPage);
 			for (Film film : filmsList) {
 				film.setGenreList(filmDAO.getGenreByFilmId(film.getId()));
@@ -85,15 +92,18 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
-	public List<Film> getFilmList(String strPageNumber) throws ServiceException {
-		if (!DataValidater.validatePositiveInteger(strPageNumber)) {
+	public List<Film> getFilmList(String strPageNumber, String strMaxPageNumber) throws ServiceException {
+		if (!DataValidater.validatePositiveIntegers(strPageNumber, strMaxPageNumber)) {
 			throw new ServiceException("Incorrect request`s parameters");
 		}
 		int pageNumber = Integer.parseInt(strPageNumber);
+		int maxPageNumber = Integer.parseInt(strMaxPageNumber);
 		int filmsPerPage = DEFAULT_FILMS_PER_PAGE;
-		
 		if (pageNumber == 0) {
 			filmsPerPage = DEFAULT_PAGE_NUMBER;
+		}
+		if (pageNumber > maxPageNumber) {
+			throw new ServiceException("Incorrect page number: pageNumber = "+ pageNumber + "; maxPageNumber = " + maxPageNumber);
 		}
 
 		DAOFactory daoFactory = DAOFactory.getInstance();

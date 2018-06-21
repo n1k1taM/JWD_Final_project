@@ -12,6 +12,7 @@
 <!-- Custom styles for this template -->
 <link href="css/shop-item.css" rel="stylesheet">
 <link href="css/pagination.css" rel="stylesheet">
+<%@include file="../elements/localization.jsp" %>
 
 
 </head>
@@ -23,16 +24,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
-				<jsp:include page="../elements/left-bar.jsp"></jsp:include>
+				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >${button_back_to_main}</a>
 			</div>
 			<div class="col-lg-9">
 				<div class="row">
-					<h6 class="col-lg-3">Cost</h6>
+					<h6 class="col-lg-3">${label_cost}</h6>
 					<span class="col-lg-3">$ ${costAfterDiscount}</span>
 				</div>
 				<div class="row">
 
-					<label class="col-lg-3 col-form-label form-control-label">Enter
+					<label class="col-lg-3 col-form-label form-control-label">${label_enter}
 						${costAfterDiscount}</label>
 					<form action="${pageContext.request.contextPath}/Controller"
 						class="col-lg-6">
@@ -43,7 +44,7 @@
 							</div>
 
 							<div class="col-lg-6">
-								<button type="submit">Pay</button>
+								<button type="submit">${button_pay_order}</button>
 							</div>
 						</div>
 					</form>

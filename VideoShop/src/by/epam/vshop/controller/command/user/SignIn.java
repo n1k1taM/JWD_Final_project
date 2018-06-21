@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 
 import by.epam.vshop.bean.User;
+import by.epam.vshop.controller.JSPPageName;
 import by.epam.vshop.controller.ParameterName;
 import by.epam.vshop.controller.command.Command;
 import by.epam.vshop.service.ServiceFactory;
@@ -34,7 +35,7 @@ public class SignIn implements Command {
 			User user = userService.singIn(login, password);
 			
 			if(!user.isStatus()){
-				response.sendRedirect(request.getContextPath() + "/signIn?errorMassage=blockedAccount");
+				response.sendRedirect(request.getContextPath() + JSPPageName.SIGN_IN + "?errorMassage=blockedAccount");
 				return;
 			}
 
@@ -49,7 +50,7 @@ public class SignIn implements Command {
 			logger.info("User " + login + " successfully authorized");
 		} catch (ServiceException e) {
 			logger.error("Login error in account", e);
-			response.sendRedirect(request.getContextPath() + "/signIn?errorMassage=singinError");
+			response.sendRedirect(request.getContextPath() +  "/Controller?command=show_sign_in_form&errorMassage=singinError");
 		}
 
 	}

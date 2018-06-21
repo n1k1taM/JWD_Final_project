@@ -30,7 +30,7 @@ public class ChangeUserStatus implements Command{
 			response.sendRedirect(request.getContextPath() + "/Controller?command=show_user_account_for_admin&userId=" + strUserId);
 		} catch (ServiceException e) {
 			logger.error("Error executing command", e);
-			response.sendRedirect(JSPPageName.INDEX_PAGE);
+			response.sendRedirect(request.getContextPath() + JSPPageName.INDEX_PAGE);
 		}
 		
 		

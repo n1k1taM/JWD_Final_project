@@ -38,7 +38,7 @@ public class AddFilmToActiveOrder implements Command {
 		try {
 			orderService.addFilmToActiveOrder(strFilmId, userId);
 		} catch (ServiceException e) {
-			logger.error(e);
+			logger.error("Error executing command", e);
 		}
 		response.sendRedirect(request.getContextPath() + "/Controller?command=show_film&filmId="+ strFilmId + "&commentPageNumber=1");
 

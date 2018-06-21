@@ -668,5 +668,36 @@ public class FilmDAOImpl implements FilmDAO {
 		}
 		return filmList;
 	}
+
+	@Override
+	public boolean isGenreExest(int id) throws DAOException {
+		ConnectionPool pool = null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+
+		try {
+			pool = ConnectionPool.getInstance();
+			connection = pool.take();
+			preparedStatement = connection.prepareStatement(SQLRequestManager.GET_GENRE_BY_ID);
+			preparedStatement.setInt(1, id);
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				return true;
+			}else{
+				return false;
+			}
+
+
+		} catch (ConnectionPoolException e) {
+			throw new DAOException("Can't get connection to data base", e);
+		} catch (SQLException e) {
+			throw new DAOException("SQL mistake", e);
+		} finally {
+			pool.closeConnection(connection, preparedStatement, resultSet);
+		}
+
+		
+	}
 }
 

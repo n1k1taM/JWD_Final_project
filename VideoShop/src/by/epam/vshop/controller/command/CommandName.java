@@ -56,6 +56,13 @@ public enum CommandName {
 	
 	WATCH_FILM,
 	
-	LOCALIZATION
+	LOCALIZATION,
+	
+	SHOW_SIGN_IN_FORM,
+	
+	SHOW_SIGN_UP_FORM, 
+	
+	SHOW_ADD_FILM_FORM
+			
 
 }

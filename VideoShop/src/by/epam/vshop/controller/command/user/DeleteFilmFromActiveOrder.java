@@ -33,7 +33,7 @@ public class DeleteFilmFromActiveOrder implements Command{
 			orderService.deleteFilmFromActiveOrder(filmId, orderId);
 			System.out.println("hello");
 		} catch (ServiceException e) {
-			logger.error(e);
+			logger.error("Error executing command", e);
 		}
 		
 		response.sendRedirect(request.getContextPath() + "/Controller?command=show_active_order");

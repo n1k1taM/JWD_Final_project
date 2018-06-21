@@ -89,6 +89,9 @@ public final class ConnectionPool implements Closeable {
 		if (connection == null) {
 			throw new DAOException("Connection is null");
 		}
+		if (!busyConnection.contains(connection)) {
+			throw new DAOException("Try to close unknown connection");
+		}
 
 		Connection tempConnection = connection;
 		connection = null;

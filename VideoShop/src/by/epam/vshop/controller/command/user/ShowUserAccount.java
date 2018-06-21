@@ -49,7 +49,8 @@ public class ShowUserAccount implements Command{
 			RequestDispatcher dispatcher = request.getRequestDispatcher(JSPPageName.ACCOUTN);
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
-			logger.error(e);
+			logger.error("Error executing command", e);
+			response.sendRedirect(request.getContextPath() + JSPPageName.INDEX_PAGE);
 		}
 		
 		

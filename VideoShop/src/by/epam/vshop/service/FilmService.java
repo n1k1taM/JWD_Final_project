@@ -10,11 +10,11 @@ public interface FilmService {
 
 	Film getFilm(String strFilmId) throws ServiceException;
 
-	List<Film> getFilmListByGenreId(String strId, String strPageNumber) throws ServiceException;
+	List<Film> getFilmListByGenreId(String strId, String strPageNumber, String strMaxPageNumber) throws ServiceException;
 
 	List<Genre> getAllGenres() throws ServiceException;
 
-	List<Film> getFilmList(String strPageNumber) throws ServiceException;
+	List<Film> getFilmList(String strPageNumber, String strMaxPageNumber) throws ServiceException;
 
 	int getMaxPageNumber() throws ServiceException;
 

@@ -13,6 +13,8 @@
 <link href="css/shop-item.css" rel="stylesheet">
 <link href="css/pagination.css" rel="stylesheet">
 
+<%@include file="../elements/localization.jsp" %>
+
 </head>
 
 <body>
@@ -21,14 +23,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
-				<jsp:include page="../elements/left-bar.jsp"/>
+				<%@include file="../elements/left-bar.jsp" %>
 				<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
 					<%@include file="../elements/left-bar-admin.jsp" %>
 				</c:if>
 			</div>
 	
 			<div class="col-lg-9">
-				<jsp:include page="../elements/filmsViewer.jsp"></jsp:include>
+				<%@include file="../elements/filmsViewer.jsp" %>
 				<div class="pagationContaner">
 					<p:pagination currentPageNumber="${currentPageNumber}" maxPageNumber="${maxPageNumber}" paginationLink="${pageContext.request.contextPath}/Controller?command=show_films_by_genre&genreId=${currentGenreId}" />
 				</div>

@@ -26,14 +26,14 @@
 						<option>4.5</option>
 						<option>5</option>
 					</select>	
-					<button class="btn btn-danger btn-sm" type="submit"> Добавить оценку </button>
+					<button class="btn btn-danger btn-sm" type="submit">${button_add_rating} </button>
 				</form>
 			
 			<form action="${pageContext.request.contextPath}/Controller">
 					<input type="hidden" name="command" value="add_comment"> 
 					<input type="hidden" name="filmId" value="${film.id}">
 					<textarea class="col-sm-10" rows="8"  name="comment_message"></textarea><br>	
-					<button class="btn btn-danger btn-sm" type="submit"> Добавить комментарий </button>
+					<button class="btn btn-danger btn-sm" type="submit">${button_add_comment}</button>
 				</form>
 			</div>
 		</div>

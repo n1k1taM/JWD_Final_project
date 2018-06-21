@@ -12,6 +12,7 @@
 <!-- Custom styles for this template -->
 <link href="css/shop-item.css" rel="stylesheet">
 <link href="css/pagination.css" rel="stylesheet">
+<%@include file="../elements/localization.jsp" %>
 
 <style>
 </style>
@@ -24,7 +25,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
-				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >Back to films</a><br><br>
+				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-success" >${button_back_to_main}</a><br><br>
 				<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
 								<%@include file="../elements/left-bar-admin.jsp"%>
 				</c:if>
@@ -37,23 +38,23 @@
 				<div class="tab-pane active">
 
 					<div class="row">
-						<h6 class="col-lg-3">Login:</h6>
+						<h6 class="col-lg-3">${label_login}:</h6>
 						<span class="col-lg-3">${user.login}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">Email:</h6>
+						<h6 class="col-lg-3">${label_email}:</h6>
 						<span class="col-lg-3">${user.email}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">First name:</h6>
+						<h6 class="col-lg-3">${label_first_name}:</h6>
 						<span class="col-lg-3">${user.login}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">Last name:</h6>
+						<h6 class="col-lg-3">${label_last_name}:</h6>
 						<span class="col-lg-3">${user.lastName}</span>
 					</div>
 					<div class="row">
-						<h6 class="col-lg-3">Discount:</h6>
+						<h6 class="col-lg-3">${label_discount}:</h6>
 						<div class="col-lg-6">
 							<form action="${pageContext.request.contextPath}/Controller">
 								<input type="hidden" name="command"
@@ -71,7 +72,7 @@
 										</c:choose>
 									</c:forEach>
 								</select> <label>%</label> <input type="submit" class="btn btn-primary"
-									value="Change discount" >
+									value="${button_change_discount}" >
 							</form>
 						</div>
 
@@ -86,25 +87,25 @@
 									<c:when test="${user.status}">
 										<p>
 											<input name="user_status" type="radio" value="true" checked>
-											active <br>
+											${label_active} <br>
 										</p>
 										<p>
 											<input name="user_status" type="radio" value="false">
-											blocked<br>
+											${label_blocked}<br>
 										</p>
 									</c:when>
 									<c:otherwise>
 										<p>
 											<input name="user_status" type="radio" value="true">
-											active <br>
+											${label_active} <br>
 										</p>
 										<p>
 											<input name="user_status" type="radio" value="false" checked>
-											blocked<br>
+											${label_blocked}<br>
 										</p>
 									</c:otherwise>
 								</c:choose>
-								 <input type="submit" class="btn btn-primary" value="Change status" >
+								 <input type="submit" class="btn btn-primary" value="${button_change_status}" >
 							</form>
 	
 						</div>

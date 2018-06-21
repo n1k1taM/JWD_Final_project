@@ -19,8 +19,8 @@ public class InitializationListener implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		CommandFactory provider = CommandFactory.getInstance();
-		Command command = provider.getCommand(CommandName.INITIALIZATION_SOURCE.name());
+		CommandFactory factory = CommandFactory.getInstance();
+		Command command = factory.getCommand(CommandName.INITIALIZATION_SOURCE.name());
 		try {
 			command.execute(null, null);
 		} catch (IOException | ServletException e) {

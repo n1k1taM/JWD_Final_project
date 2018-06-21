@@ -30,7 +30,7 @@ public class AddRating implements Command{
 		try {
 			filmService.addRating(userId, strFilmId, ratingValue);
 		} catch (ServiceException e) {
-			logger.error(e);
+			logger.error("Error executing command", e);
 		}
 		response.sendRedirect(request.getContextPath() + "/Controller?command=show_film&commentPageNumber=1&filmId=" + strFilmId);
 		

@@ -11,6 +11,7 @@
 
 <!-- Custom styles for this template -->
 <link href="css/shop-item.css" rel="stylesheet">
+<%@include file="../elements/localization.jsp" %>
 
 </head>
 
@@ -23,7 +24,7 @@
 	
 		<div class="row">
 			<div class="col-lg-3">
-				<jsp:include page="../elements/left-bar.jsp"/>
+				<%@include file="../elements/left-bar.jsp" %>
 				<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
 					<%@include file="../elements/left-bar-admin.jsp" %>
 				</c:if>
@@ -31,7 +32,7 @@
 			
 			<!-- /.col-lg-3 -->
 			<div class="col-lg-9">
-				<jsp:include page="../elements/filmsViewer.jsp"></jsp:include>
+				<%@include file="../elements/filmsViewer.jsp" %>
 				<div class="row"></div>
 				<div class="col-lg-4"></div>
 				

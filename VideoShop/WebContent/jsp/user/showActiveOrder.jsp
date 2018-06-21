@@ -15,6 +15,7 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
 	rel="stylesheet">
+<%@include file="../elements/localization.jsp" %>	
 </head>
 <body>
 	<%@include file="../elements/nav-bar.jsp"%>
@@ -23,9 +24,9 @@
 		<table id="cart" class="table table-hover table-condensed">
 			<thead>
 				<tr>
-					<th style="width: 58%">Film</th>
+					<th style="width: 58%">${label_film}</th>
 					<th style="width: 10%"></th>
-					<th style="width: 22%" class="text-center">Price</th>
+					<th style="width: 22%" class="text-center">${label_price}</th>
 					<th style="width: 10%"></th>
 				</tr>
 			</thead>
@@ -33,7 +34,6 @@
 				<c:forEach var="film" items="${order.films}">
 					<tr>
 					<td data-th="Product">
-						<!-- foreach -->
 						<div class="row">
 							<div class="col-sm-2 hidden-xs">
 								<img src="${film.cover}" class="img-responsive"
@@ -65,27 +65,28 @@
 			<tfoot>
 				<tr>
 					<td></td>
-					<td>Cost</td>
+					<td>${label_cost}</td>
 					<td class="text-center">${costBeforeDescount}</td>
 					<td></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td>Discount</td>
+					<td>${label_discount}</td>
 					<td class="text-center">${discount}</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td><a href="#" class="btn btn-warning"><i
-							class="fa fa-angle-left"></i> Continue Shopping</a></td>
-					<td colspan="1" class="hidden-xs">Cost atfer discount</td>
+					<td><a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-warning"><i
+							class="fa fa-angle-left"></i>${button_back_to_main}</a></td>
+					<td colspan="1" class="hidden-xs">${label_cost_after_discount}</td>
 					<td class="hidden-xs text-center"><strong>$ ${costAfterDiscount}</strong></td>
-					<td><a href="${pageContext.request.contextPath}/Controller?command=show_payment_page" class="btn btn-success btn-block">Checkout
+					<td><a href="${pageContext.request.contextPath}/Controller?command=show_payment_page" class="btn btn-success btn-block">${button_make_order}
 							<i class="fa fa-angle-right"></i>
 					</a></td>
 				</tr>
 			</tfoot>
 		</table>
 	</div>
+	<%@include file="../elements/footer.jsp" %>
 </body>
 </html>

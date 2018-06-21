@@ -30,7 +30,7 @@ public class PayOrder implements Command{
 		try {
 			orderService.payOrder(userId, strPaymentValue);
 		} catch (ServiceException e) {
-			logger.error("Exception in command PayOrder", e);
+			logger.error("Error executing command", e);
 		}
 		response.sendRedirect(request.getContextPath() + "/Controller?command=show_client_film_list&pageNumber=1");
 		

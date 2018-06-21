@@ -11,7 +11,7 @@ import by.epam.vshop.service.ServiceFactory;
 import by.epam.vshop.service.exception.ServiceException;
 
 public class InitializationSource implements Command {
-	private static final Logger ligger = Logger.getLogger(InitializationSource.class);
+	private static final Logger logger = Logger.getLogger(InitializationSource.class);
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
@@ -20,10 +20,10 @@ public class InitializationSource implements Command {
 
 		try {
 			initializationService.initSource();
-			ligger.info("Database has been initialized");
+			logger.info("Database has been initialized");
 		} catch (ServiceException e) {
-			ligger.info("Database has not been initialized");
-			ligger.error(e);
+			logger.info("Database has not been initialized");
+			logger.error(e);
 		}
 	}
 

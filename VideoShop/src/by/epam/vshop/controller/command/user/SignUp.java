@@ -38,7 +38,7 @@ public class SignUp implements Command {
 			dispatcher.forward(request, response);
 		} catch (ServiceException e) {
 			logger.error("Registration error", e);
-			response.sendRedirect(request.getContextPath() + "/signUp?errorMassage=singupError");
+			response.sendRedirect(request.getContextPath() + "/Controller?command=show_sign_up_form&errorMassage=singupError");
 		}
 	}
 

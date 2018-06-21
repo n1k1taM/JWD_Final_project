@@ -31,7 +31,7 @@ public class GetGenreList implements Command {
 		    response.setCharacterEncoding("UTF-8");
 		    response.getWriter().write(json);
 		} catch (ServiceException e) {
-			logger.error("Error of getting all genres", e);
+			logger.error("Error executing command", e);
 		}
 
 	}

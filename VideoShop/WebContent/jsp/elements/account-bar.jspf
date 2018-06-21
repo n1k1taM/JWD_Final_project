@@ -19,13 +19,12 @@
 					<c:set var="linkForProfile" value="${pageContext.request.contextPath}/Controller?command=show_user_account_for_admin&userId=${userId}"></c:set>
 		</c:if>
 		
-		<c:if test=""></c:if>
-		<li class="nav-item"><a href="${linkForProfile}" class="nav-link ${profileActive}">Profile</a></li>
+		<li class="nav-item"><a href="${linkForProfile}" class="nav-link ${profileActive}">${label_profile}</a></li>
 		<c:if test="${(not empty sessionScope.role)and(sessionScope.role == 'admin') }">	
 					<c:set var="linkForProfile" value="${pageContext.request.contextPath}/Controller?command=show_user_account_for_admin&userId=${userId}"></c:set>
 		</c:if>
 		
-		<li class="nav-item"><a href="${pageContext.request.contextPath}/Controller?command=get_user_payment_history&userId=${userId}" class="nav-link ${commentsActive}">Orders</a>
+		<li class="nav-item"><a href="${pageContext.request.contextPath}/Controller?command=get_user_payment_history&userId=${userId}" class="nav-link ${commentsActive}">${label_orders}</a>
 		</li>
 	</ul>
 </div>
