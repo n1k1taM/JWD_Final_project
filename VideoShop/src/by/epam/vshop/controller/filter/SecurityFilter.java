@@ -48,6 +48,7 @@ public class SecurityFilter implements Filter {
 		clientCommands.add(CommandName.LOCALIZATION);
 		clientCommands.add(CommandName.LOGOUT);
 		clientCommands.add(CommandName.SHOW_CLIENT_FILM_LIST);
+
 		adminCommands.add(CommandName.ADD_DISCOUNT_TO_CLIENT);
 		adminCommands.add(CommandName.ADD_FILM);
 		adminCommands.add(CommandName.SHOW_ADD_FILM_FORM);
@@ -117,11 +118,7 @@ public class SecurityFilter implements Filter {
 			}
 
 		} else {
-			if (request.getRequestURI().equals(request.getContextPath() + JSPPageName.INDEX_PAGE)) {
-				chain.doFilter(servletRequest, servletResponse);
-			} else {
-				response.sendRedirect(request.getContextPath() + JSPPageName.INDEX_PAGE);
-			}
+			chain.doFilter(servletRequest, servletResponse);
 
 		}
 	}

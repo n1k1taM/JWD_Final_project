@@ -63,6 +63,9 @@
 							</p>
 							<p>${film.longDescription}</p>
 							<c:choose>
+								<c:when test="${(empty sessionScope.role)}">
+									<a href="${pageContext.request.contextPath}/Controller?command=show_sign_in_form" class="btn btn-success" role="button">${button_add_to_cart}</a>
+								</c:when>
 								<c:when test="${(empty filmOrderStatus)and(sessionScope.role != 'admin')}">
 									<a href="${pageContext.request.contextPath}/Controller?command=add_film_to_active_order&filmId=${film.id}" class="btn btn-success" role="button">${button_add_to_cart}</a>
 								</c:when>

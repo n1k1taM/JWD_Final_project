@@ -23,7 +23,7 @@
 	    		<c:when test="${pageContext.errorData.statusCode == 504}">
 	       			Превышено время ожидания
 	       		</c:when>
-	       		<c:when test="${pageContext.errorData.statusCode == 504}">
+	       		<c:when test="${pageContext.errorData.statusCode == 500}">
 	       			Внутренняя ошибка сервера
 	       		</c:when>
 	    		<c:otherwise>
